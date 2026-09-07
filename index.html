@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProoferGuide | Dough Proofer & Fermentation Box Spec Index</title>
-  <meta name="description" content="Compare dough proofing boxes, starter warmers, and fermentation chambers side-by-side. Internal usable dimensions, temperature controls, and vessel clearance specs.">
+  <meta name="description" content="Compare dough proofing boxes, starter warmers, and fermentation chambers side-by-side. Verifiable internal usable dimensions, temperature controls, and vessel clearance specs.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -29,7 +29,7 @@
 </head>
 <body class="bg-brand-50 text-brand-900 font-sans antialiased min-h-screen flex flex-col">
 
-  <!-- Navigation Bar (Now at the very top) -->
+  <!-- Navigation Bar -->
   <header class="border-b border-stone-200 bg-white sticky top-0 z-30 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center gap-2">
@@ -39,7 +39,7 @@
       <nav class="flex items-center gap-6 text-sm font-medium text-stone-700">
         <a href="#matrix" class="hover:text-brand-accent transition">Comparison Matrix</a>
         <a href="#fit-guide" class="hover:text-brand-accent transition">Buying Nuances</a>
-        <a href="#compliance" class="hover:text-brand-accent transition text-xs text-stone-500">Legal & Privacy</a>
+        <a href="#compliance" class="hover:text-brand-accent transition text-xs text-stone-500">Legal & Policies</a>
       </nav>
     </div>
   </header>
@@ -48,13 +48,13 @@
   <main class="flex-grow">
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 text-center">
       <h1 class="text-3xl sm:text-5xl font-extrabold text-brand-900 tracking-tight max-w-4xl mx-auto leading-tight">
-        Dough Proofer & Fermentation Chamber Spec Matrix
+        Dough Proofer & Fermentation Equipment Spec Index
       </h1>
       <p class="mt-4 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto">
-        Compare verifiable internal clearances, heating and cooling mechanics, and storage footprints to match your baking volume.
+        Compare active proofing chambers, starter warmers, and passive bulk fermentation trays side-by-side.
       </p>
 
-      <!-- Low-profile, compliant pre-click disclosure -->
+      <!-- Pre-Click Compliance Disclosure -->
       <p class="mt-3 text-[11px] text-stone-600">
         Independent & reader-supported. As an Amazon Associate I earn from qualifying purchases.
       </p>
@@ -65,16 +65,19 @@
         <!-- Category Filter Pills -->
         <div class="flex flex-wrap gap-2 justify-center" id="category-filters">
           <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold border transition bg-brand-900 text-white border-brand-900">
-            All Models
+            All Items (<span id="count-all">0</span>)
           </button>
-          <button data-filter="loaf" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold border transition bg-white text-stone-700 border-stone-300 hover:bg-stone-50">
-            Loaf & Bowl Sized
+          <button data-filter="chambers" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold border transition bg-white text-stone-700 border-stone-300 hover:bg-stone-50">
+            Active Chambers & Boxes
           </button>
           <button data-filter="starter" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold border transition bg-white text-stone-700 border-stone-300 hover:bg-stone-50">
-            Starter Only
+            Starter Warmers & Jars
+          </button>
+          <button data-filter="passive" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold border transition bg-white text-stone-700 border-stone-300 hover:bg-stone-50">
+            Passive Dough Trays
           </button>
           <button data-filter="cooling" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold border transition bg-white text-stone-700 border-stone-300 hover:bg-stone-50">
-            Heats & Cools
+            Active Cooling
           </button>
         </div>
 
@@ -82,11 +85,11 @@
         <div class="flex items-center gap-2 border-l-0 sm:border-l sm:pl-4 border-stone-200">
           <span class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Units:</span>
           <div class="inline-flex rounded-lg border border-stone-300 p-0.5 bg-stone-100">
-            <button id="unit-metric" class="px-2.5 py-1 text-xs font-semibold rounded-md transition bg-white text-brand-900 shadow-sm">
-              Metric (°C/cm)
+            <button id="unit-imperial" class="px-2.5 py-1 text-xs font-semibold rounded-md transition bg-white text-brand-900 shadow-sm">
+              Imperial (°F)
             </button>
-            <button id="unit-imperial" class="px-2.5 py-1 text-xs font-semibold rounded-md transition text-stone-600 hover:text-brand-900">
-              Imperial (°F/in)
+            <button id="unit-metric" class="px-2.5 py-1 text-xs font-semibold rounded-md transition text-stone-600 hover:text-brand-900">
+              Metric (°C)
             </button>
           </div>
         </div>
@@ -101,48 +104,47 @@
           <table class="w-full text-left text-sm border-collapse" id="comparison-table">
             <thead>
               <tr class="bg-stone-100 text-stone-700 text-xs uppercase tracking-wider border-b border-stone-200">
-                <th class="py-3.5 px-4 font-bold">Model & Form Factor</th>
-                <th class="py-3.5 px-4 font-bold">Thermal System</th>
-                <th class="py-3.5 px-4 font-bold">Temp Range</th>
-                <th class="py-3.5 px-4 font-bold">Internal Clearance</th>
-                <th class="py-3.5 px-4 font-bold">Vessel Fit Guide</th>
-                <th class="py-3.5 px-4 font-bold text-right">Pricing & Store</th>
+                <th class="py-3.5 px-4 font-bold">Brand & Model</th>
+                <th class="py-3.5 px-4 font-bold">Category</th>
+                <th class="py-3.5 px-4 font-bold">Thermal Mechanics</th>
+                <th class="py-3.5 px-4 font-bold">Operating Temp Range</th>
+                <th class="py-3.5 px-4 font-bold text-right">Shop / Availability</th>
               </tr>
             </thead>
             <tbody id="table-body" class="divide-y divide-stone-200">
-              <!-- Rendered via JavaScript -->
+              <!-- Populated by JavaScript -->
             </tbody>
           </table>
         </div>
       </div>
       <p class="mt-2 text-right text-[11px] text-stone-500">
-        Pricing tiers ($ = under $75, $$ = $75–$120, $$$ = $120–$180, $$$$ = $180+). Click "View on Amazon" for live pricing and stock availability.
+        Prices and product availability subject to change on Amazon. Always verify real-time dimensions and specifications on product listings.
       </p>
     </section>
 
-    <!-- Practical Buying Nuances / Editorial Content -->
+    <!-- Practical Buying Nuances -->
     <section id="fit-guide" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-stone-200">
-      <h2 class="text-2xl font-bold text-brand-900 mb-6">Practical Buying Nuances</h2>
+      <h2 class="text-2xl font-bold text-brand-900 mb-6">Equipment Selection Guide</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <div class="bg-white p-5 rounded-xl border border-stone-200 shadow-sm">
-          <h3 class="font-bold text-base text-brand-900 mb-2">Heating Only vs. Peltier Cooling</h3>
+          <h3 class="font-bold text-base text-brand-900 mb-2">Active Heating vs. Active Cooling</h3>
           <p class="text-stone-600 text-sm leading-relaxed">
-            Standard units only heat. In warm summer kitchens (25°C+), you cannot retard proofing without active Peltier cooling (e.g., Sourdough Home) to pull ambient temperature down.
+            Most proofers only heat dough. For warm ambient conditions or retarding fermentation, only thermoelectric chambers like the Sourdough Home can actively pull temperatures down.
           </p>
         </div>
 
         <div class="bg-white p-5 rounded-xl border border-stone-200 shadow-sm">
-          <h3 class="font-bold text-base text-brand-900 mb-2">Vessel Height & Margin</h3>
+          <h3 class="font-bold text-base text-brand-900 mb-2">Insulated Fabric vs. Rigid Chambers</h3>
           <p class="text-stone-600 text-sm leading-relaxed">
-            Measure your vessels including their lid or shower-cap covers. A 10-inch round banneton or 6L Cambro bucket requires a minimum of 20cm (8 inches) of internal clearance.
+            Collapsible fabric proofers offer lightweight storage, while rigid chambers offer firmer walls, simpler sanitization, and structured internal racks.
           </p>
         </div>
 
         <div class="bg-white p-5 rounded-xl border border-stone-200 shadow-sm">
-          <h3 class="font-bold text-base text-brand-900 mb-2">Footprint & Storage</h3>
+          <h3 class="font-bold text-base text-brand-900 mb-2">Passive Trays & Containers</h3>
           <p class="text-stone-600 text-sm leading-relaxed">
-            Rigid units require dedicated counter or cabinet shelf space. Foldable polypropylene or fabric units collapse flat for storage in kitchen drawers between baking days.
+            Airtight pizza dough boxes and stackable containers are designed for room-temperature bulk fermentation or cold retarding in a refrigerator without drying out dough surfaces.
           </p>
         </div>
 
@@ -181,7 +183,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="text-center md:text-left">
         <p class="font-bold text-sm text-white">ProoferGuide.com</p>
-        <p class="mt-1 text-stone-400">Independent hardware spec matrix for home bakers.</p>
+        <p class="mt-1 text-stone-400">Independent hardware spec matrix for artisan bakers.</p>
       </div>
       <div class="text-center md:text-right text-stone-400 space-y-1">
         <p>© 2026 ProoferGuide.com. All rights reserved.</p>
@@ -190,103 +192,214 @@
     </div>
   </footer>
 
-  <!-- Script Logic -->
+  <!-- Complete Product Dataset & Filtering Logic -->
   <script>
     const products = [
       {
-        id: "bt-folding",
-        name: "Brød & Taylor Folding Proofer (FP-205)",
-        formFactor: "Collapsible Rigid Polypropylene",
-        category: "loaf",
+        brand: "Brød & Taylor",
+        name: "Brod & Taylor Folding Proofer & Slow Cooker (FP-105)",
+        group: "chambers",
+        category: "Collapsible Chamber",
+        thermalType: "Radiant Base + Humidity Tray (Heating Only)",
+        tempF: "70°F – 120°F",
+        tempC: "21°C – 49°C",
         canCool: false,
-        thermalType: "Radiant base plate + water tray (Heating Only)",
-        tempMetric: "21°C – 90°C",
-        tempImperial: "70°F – 195°F",
-        dimsMetric: "37.5 × 32.0 × 20.0 cm",
-        dimsImperial: "14.75 × 12.5 × 8.0 in",
-        capacity: "Fits two 9×5 in loaf pans, 10 in banneton, or 6L Cambro",
-        priceTier: "$$$$",
-        amazonUrl: "https://www.amazon.com/dp/B002J7W7C4?tag=prooferguide-20"
+        url: "https://www.amazon.com/dp/B0BF34DHWK?tag=collagenindex-21"
       },
       {
-        id: "dbakeraid",
-        name: "D'BakerAid SureDough Proofer",
-        formFactor: "Smart Enclosed Cabinet",
-        category: "loaf",
-        canCool: false,
-        thermalType: "Convection air circulation + digital probe (Heating Only)",
-        tempMetric: "20°C – 45°C",
-        tempImperial: "68°F – 113°F",
-        dimsMetric: "36.0 × 30.0 × 22.0 cm",
-        dimsImperial: "14.2 × 11.8 × 8.6 in",
-        capacity: "Fits two medium bannetons or 5-qt Dutch oven base",
-        priceTier: "$$$$",
-        amazonUrl: "https://www.amazon.com/s?k=baker+dough+proofer&tag=prooferguide-20"
-      },
-      {
-        id: "fabric-box",
-        name: "Generic 6-Layer Thermal Proofer",
-        formFactor: "Collapsible Foil/Oxford Zip Bag",
-        category: "loaf",
-        canCool: false,
-        thermalType: "PTC thermal heating mat + probe (Heating Only)",
-        tempMetric: "20°C – 55°C",
-        tempImperial: "68°F – 131°F",
-        dimsMetric: "30.0 × 30.0 × 20.0 cm",
-        dimsImperial: "11.8 × 11.8 × 7.8 in",
-        capacity: "Fits one 10 in round banneton or 4L round mixing bowl",
-        priceTier: "$",
-        amazonUrl: "https://www.amazon.com/s?k=dough+proofing+box+mat&tag=prooferguide-20"
-      },
-      {
-        id: "bt-starter",
-        name: "Brød & Taylor Sourdough Home",
-        formFactor: "Upright Mini Solid Chamber",
-        category: "starter",
+        brand: "Brød & Taylor",
+        name: "Brød & Taylor Sourdough Home (SH-100)",
+        group: "starter",
+        category: "Starter Mini-Chamber",
+        thermalType: "Peltier Thermoelectric (Heats & Cools)",
+        tempF: "41°F – 122°F",
+        tempC: "5°C – 50°C",
         canCool: true,
-        thermalType: "Peltier Thermoelectric (Active Heating & Cooling)",
-        tempMetric: "5°C – 50°C",
-        tempImperial: "41°F – 122°F",
-        dimsMetric: "13.0 × 14.0 × 19.0 cm",
-        dimsImperial: "5.1 × 5.5 × 7.5 in",
-        capacity: "Starter jars only (fits one 1L Weck or Mason jar)",
-        priceTier: "$$$",
-        amazonUrl: "https://www.amazon.com/dp/B0CL862C1M?tag=prooferguide-20"
+        url: "https://www.amazon.com/dp/B0C9SJ9FRW?tag=collagenindex-21"
       },
       {
-        id: "sourhouse-goldie",
-        name: "Sourhouse Goldie Warmer",
-        formFactor: "Countertop Cloche Pod",
-        category: "starter",
+        brand: "GIYUDOT",
+        name: "Folding Bread Proofing Box 36L with Timer",
+        group: "chambers",
+        category: "Collapsible Fabric Box",
+        thermalType: "3-Zone PTC Heating (Heating Only)",
+        tempF: "50°F – 113°F",
+        tempC: "10°C – 45°C",
         canCool: false,
-        thermalType: "Radiant base pad + auto-sensor (Heating Only)",
-        tempMetric: "24°C – 28°C",
-        tempImperial: "75°F – 82°F",
-        dimsMetric: "12.0 × 12.0 × 17.0 cm",
-        dimsImperial: "4.7 × 4.7 × 6.7 in",
-        capacity: "Starter jars only (fits standard 1L starter jar)",
-        priceTier: "$$$",
-        amazonUrl: "https://www.amazon.com/s?k=sourhouse+goldie&tag=prooferguide-20"
+        url: "https://www.amazon.com/dp/B0DGFBRZP9?tag=collagenindex-21"
       },
       {
-        id: "raisenne-mat",
-        name: "Raisenne Dough Riser Film",
-        formFactor: "Ultra-Thin Flexible Film Mat",
-        category: "loaf",
+        brand: "InnovifyHub",
+        name: "InnovifyHub Foldable Bread Proofing Box with Digital Controller",
+        group: "chambers",
+        category: "Collapsible Fabric Box",
+        thermalType: "3-Sided Radiant (Heating Only)",
+        tempF: "50°F – 130°F",
+        tempC: "10°C – 54°C",
         canCool: false,
-        thermalType: "Direct contact printed circuit (Heating Only)",
-        tempMetric: "Fixed ~27°C–30°C",
-        tempImperial: "Fixed ~80°F–85°F",
-        dimsMetric: "25.0 × 30.0 × 0.3 cm",
-        dimsImperial: "10.0 × 12.0 × 0.1 in",
-        capacity: "Mat base for one large mixing bowl or banneton",
-        priceTier: "$$",
-        amazonUrl: "https://www.amazon.com/dp/B08KHVBC2R?tag=prooferguide-20"
+        url: "https://www.amazon.com/dp/B0FW4RP21K?tag=collagenindex-21"
+      },
+      {
+        brand: "LuxDuo",
+        name: "LuxDuo 5-Layer Insulated Zippered Bread Proofer",
+        group: "chambers",
+        category: "Collapsible Fabric Box",
+        thermalType: "Surround Heating Wire (Heating Only)",
+        tempF: "50°F – 113°F",
+        tempC: "10°C – 45°C",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0FLDKHFQ4?tag=collagenindex-21"
+      },
+      {
+        brand: "DEVA FRONSA",
+        name: "DEVA FRONSA 36L Foldable Dough Proofer with Front Window",
+        group: "chambers",
+        category: "Collapsible Fabric Box",
+        thermalType: "3-Sided PTC Heating (Heating Only)",
+        tempF: "50°F – 113°F",
+        tempC: "10°C – 45°C",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0FJFSD3H4?tag=collagenindex-21"
+      },
+      {
+        brand: "McKesse",
+        name: "McKesse Foldable Sourdough Proofer with Stainless Steel Rack",
+        group: "chambers",
+        category: "Collapsible Fabric Box",
+        thermalType: "Bottom Mat + 3-Zone (Heating Only)",
+        tempF: "50°F – 130°F",
+        tempC: "10°C – 54°C",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0G1LDS5RK?tag=collagenindex-21"
+      },
+      {
+        brand: "DoughMate",
+        name: "DoughMate Artisan Dough Tray Kit with Lid & Scraper",
+        group: "passive",
+        category: "Proofing Box (Passive)",
+        thermalType: "Passive Ambient Insulation",
+        tempF: "Ambient Room Temp",
+        tempC: "Ambient Room Temp",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B00449IEM4?tag=collagenindex-21"
+      },
+      {
+        brand: "Chef Pomodoro",
+        name: "Chef Pomodoro Large Pizza Dough Proofing Box (2-Pack Trays)",
+        group: "passive",
+        category: "Proofing Box (Passive)",
+        thermalType: "Passive Airtight Seal",
+        tempF: "Ambient / Refrigerator",
+        tempC: "Ambient / Refrigerator",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0C52XRNQQ?tag=collagenindex-21"
+      },
+      {
+        brand: "Chef Pomodoro",
+        name: "Chef Pomodoro 14x11 Inch Proofing Container with Handle",
+        group: "passive",
+        category: "Proofing Box (Passive)",
+        thermalType: "Passive Airtight Seal",
+        tempF: "Ambient / Refrigerator",
+        tempC: "Ambient / Refrigerator",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B08KWHXJPP?tag=collagenindex-21"
+      },
+      {
+        brand: "GSM Brands",
+        name: "GSM Brands Commercial Dough Proofing Trays with Covers (2-Pack)",
+        group: "passive",
+        category: "Proofing Box (Passive)",
+        thermalType: "Passive Airtight Stacking",
+        tempF: "Ambient / Refrigerator",
+        tempC: "Ambient / Refrigerator",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B08D3QQHRK?tag=collagenindex-21"
+      },
+      {
+        brand: "Vtopmart",
+        name: "Vtopmart 2-Pack Pizza Dough Proofing Boxes with Snap-on Lids",
+        group: "passive",
+        category: "Proofing Box (Passive)",
+        thermalType: "Passive Airtight Seal",
+        tempF: "Ambient / Refrigerator",
+        tempC: "Ambient / Refrigerator",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0FVL3XH7B?tag=collagenindex-21"
+      },
+      {
+        brand: "Brød & Taylor",
+        name: "Brød & Taylor 6L Dough Rising & Bulk Fermentation Container",
+        group: "passive",
+        category: "Proofing Box (Passive)",
+        thermalType: "Passive Measurement Container",
+        tempF: "Ambient / Refrigerator",
+        tempC: "Ambient / Refrigerator",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0DMTVY15F?tag=collagenindex-21"
+      },
+      {
+        brand: "MENGBEI",
+        name: "MENGBEI Sourdough Starter Warmer Mat with 24H Timer",
+        group: "starter",
+        category: "Starter Warmer Mat",
+        thermalType: "Graphene Heating Film (Heating Only)",
+        tempF: "70°F – 100°F",
+        tempC: "21°C – 38°C",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0F4X6JFG7?tag=collagenindex-21"
+      },
+      {
+        brand: "GNIYUIX",
+        name: "GNIYUIX Sourdough Starter Warmer with Thermostat",
+        group: "starter",
+        category: "Starter Warmer Mat",
+        thermalType: "Low-Wattage Heat Pad (Heating Only)",
+        tempF: "70°F – 100°F",
+        tempC: "21°C – 38°C",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0DT4P621P?tag=collagenindex-21"
+      },
+      {
+        brand: "Generic",
+        name: "Precision Sourdough Starter Heating Band with Digital Controller",
+        group: "starter",
+        category: "Starter Warmer Band",
+        thermalType: "Wrap-Around Thermal Band (Heating Only)",
+        tempF: "70°F – 130°F",
+        tempC: "21°C – 54°C",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0FHQBWNY9?tag=collagenindex-21"
+      },
+      {
+        brand: "Brød & Taylor",
+        name: "Brød & Taylor Sourdough Starter Jar with Thermometer Band",
+        group: "starter",
+        category: "Starter Container (Passive)",
+        thermalType: "Passive Glass & Elastic Marker",
+        tempF: "Ambient Room Temp",
+        tempC: "Ambient Room Temp",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0DYGB5Z42?tag=collagenindex-21"
+      },
+      {
+        brand: "Kolice",
+        name: "Kolice Commercial Automatic Dough Proofer & Fermenter (KF-18C)",
+        group: "chambers",
+        category: "Commercial Cabinet",
+        thermalType: "Electric Convection + Steam Humidity",
+        tempF: "32°F – 113°F",
+        tempC: "0°C – 45°C",
+        canCool: false,
+        url: "https://www.amazon.com/dp/B0BHNXXMSX?tag=collagenindex-21"
       }
     ];
 
-    let currentUnit = 'metric';
+    let currentUnit = 'imperial';
     let currentCategory = 'all';
+
+    // Set count badge
+    document.getElementById('count-all').textContent = products.length;
 
     function renderTable() {
       const tbody = document.getElementById('table-body');
@@ -295,37 +408,32 @@
       const filtered = products.filter(item => {
         if (currentCategory === 'all') return true;
         if (currentCategory === 'cooling') return item.canCool === true;
-        return item.category === currentCategory;
+        return item.group === currentCategory;
       });
 
       filtered.forEach(p => {
         const row = document.createElement('tr');
         row.className = "hover:bg-stone-50 transition border-b border-stone-200";
 
-        const tempDisplay = currentUnit === 'metric' ? p.tempMetric : p.tempImperial;
-        const dimsDisplay = currentUnit === 'metric' ? p.dimsMetric : p.dimsImperial;
+        const tempDisplay = currentUnit === 'imperial' ? p.tempF : p.tempC;
 
         row.innerHTML = `
           <td class="py-4 px-4 align-top">
-            <div class="font-bold text-brand-900">${p.name}</div>
-            <div class="text-xs text-stone-500 mt-0.5">${p.formFactor}</div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-stone-400 block">${p.brand}</span>
+            <div class="font-bold text-brand-900 leading-snug">${p.name}</div>
             ${p.canCool ? '<span class="inline-block mt-1 text-[10px] uppercase font-bold tracking-wider text-blue-700 bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded">Active Cooling</span>' : ''}
           </td>
-          <td class="py-4 px-4 align-top text-xs text-stone-600 max-w-xs leading-relaxed">
+          <td class="py-4 px-4 align-top text-xs text-stone-600 font-medium">
+            ${p.category}
+          </td>
+          <td class="py-4 px-4 align-top text-xs text-stone-600 leading-relaxed max-w-xs">
             ${p.thermalType}
           </td>
-          <td class="py-4 px-4 align-top whitespace-nowrap font-medium text-stone-800">
+          <td class="py-4 px-4 align-top whitespace-nowrap font-medium text-stone-800 text-xs">
             ${tempDisplay}
           </td>
-          <td class="py-4 px-4 align-top whitespace-nowrap text-stone-700 font-mono text-xs">
-            ${dimsDisplay}
-          </td>
-          <td class="py-4 px-4 align-top text-xs text-stone-600">
-            ${p.capacity}
-          </td>
           <td class="py-4 px-4 align-top text-right whitespace-nowrap">
-            <span class="text-xs font-semibold text-stone-500 mr-2">${p.priceTier}</span>
-            <a href="${p.amazonUrl}" target="_blank" rel="sponsored nofollow noopener" aria-label="View ${p.name} on Amazon" class="inline-block bg-brand-accent hover:bg-brand-accentHover text-white text-xs font-bold px-3 py-1.5 rounded transition shadow-sm">
+            <a href="${p.url}" target="_blank" rel="sponsored nofollow noopener" aria-label="View ${p.name} on Amazon" class="inline-block bg-brand-accent hover:bg-brand-accentHover text-white text-xs font-bold px-3 py-1.5 rounded transition shadow-sm">
               View on Amazon &rarr;
             </a>
           </td>
@@ -340,22 +448,16 @@
         document.querySelectorAll('#category-filters button').forEach(b => {
           b.className = "filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold border transition bg-white text-stone-700 border-stone-300 hover:bg-stone-50";
         });
-        e.target.className = "filter-btn active px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold border transition bg-brand-900 text-white border-brand-900";
-        currentCategory = e.target.getAttribute('data-filter');
+        const target = e.target.closest('button');
+        target.className = "filter-btn active px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold border transition bg-brand-900 text-white border-brand-900";
+        currentCategory = target.getAttribute('data-filter');
         renderTable();
       });
     });
 
-    // Unit Toggle Handlers
-    const metricBtn = document.getElementById('unit-metric');
+    // Imperial / Metric Toggle Handlers
     const imperialBtn = document.getElementById('unit-imperial');
-
-    metricBtn.addEventListener('click', () => {
-      currentUnit = 'metric';
-      metricBtn.className = "px-2.5 py-1 text-xs font-semibold rounded-md transition bg-white text-brand-900 shadow-sm";
-      imperialBtn.className = "px-2.5 py-1 text-xs font-semibold rounded-md transition text-stone-600 hover:text-brand-900";
-      renderTable();
-    });
+    const metricBtn = document.getElementById('unit-metric');
 
     imperialBtn.addEventListener('click', () => {
       currentUnit = 'imperial';
@@ -364,6 +466,14 @@
       renderTable();
     });
 
+    metricBtn.addEventListener('click', () => {
+      currentUnit = 'metric';
+      metricBtn.className = "px-2.5 py-1 text-xs font-semibold rounded-md transition bg-white text-brand-900 shadow-sm";
+      imperialBtn.className = "px-2.5 py-1 text-xs font-semibold rounded-md transition text-stone-600 hover:text-brand-900";
+      renderTable();
+    });
+
+    // Render immediately on load
     document.addEventListener('DOMContentLoaded', renderTable);
   </script>
 </body>
